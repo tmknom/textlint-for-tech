@@ -19,12 +19,14 @@ LABEL org.label-schema.vendor="tmknom" \
 ARG NODEJS_VERSION=10.14.2-r0
 ARG TEXTLINT_VERSION=11.2.5
 ARG JA_TECHNICAL_WRITING_VERSION=3.1.2
+ARG COMMENTS_VERSION=1.2.2
 ARG REVIEW_VERSION=0.3.3
 
 RUN set -x && \
     apk add --no-cache nodejs=${NODEJS_VERSION} nodejs-npm=${NODEJS_VERSION} && \
     npm install -g textlint@${TEXTLINT_VERSION} \
     textlint-rule-preset-ja-technical-writing@${JA_TECHNICAL_WRITING_VERSION} \
+    textlint-filter-rule-comments@${COMMENTS_VERSION} \
     textlint-plugin-review@${REVIEW_VERSION} && \
     npm cache clean --force && \
     apk del nodejs-npm
