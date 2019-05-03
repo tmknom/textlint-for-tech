@@ -29,6 +29,8 @@ RUN set -x && \
     npm cache clean --force && \
     apk del nodejs-npm
 
+COPY .textlintrc /opt
+
 WORKDIR /work
 ENTRYPOINT ["/usr/bin/textlint"]
 CMD ["--help"]
