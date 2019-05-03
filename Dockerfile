@@ -33,4 +33,4 @@ COPY .textlintrc /opt
 
 WORKDIR /work
 ENTRYPOINT ["/usr/bin/textlint"]
-CMD ["--help"]
+CMD ["--config", "/opt/.textlintrc", "."]
