@@ -1,13 +1,15 @@
 # textlint-for-tech
 
 [![CircleCI](https://circleci.com/gh/tmknom/textlint-for-tech.svg?style=svg)](https://circleci.com/gh/tmknom/textlint-for-tech)
-[![Docker Build Status](https://img.shields.io/docker/build/tmknom/textlint-for-tech.svg)](https://hub.docker.com/r/tmknom/textlint-for-tech/builds/)
-[![Docker Automated build](https://img.shields.io/docker/automated/tmknom/textlint-for-tech.svg)](https://hub.docker.com/r/tmknom/textlint-for-tech/)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/tmknom/textlint-for-tech.svg)](https://hub.docker.com/r/tmknom/textlint-for-tech/builds/)
+[![Docker Automated build](https://img.shields.io/docker/cloud/automated/tmknom/textlint-for-tech.svg)](https://hub.docker.com/r/tmknom/textlint-for-tech/)
 [![MicroBadger Size](https://img.shields.io/microbadger/image-size/tmknom/textlint-for-tech.svg)](https://microbadger.com/images/tmknom/textlint-for-tech)
 [![MicroBadger Layers](https://img.shields.io/microbadger/layers/tmknom/textlint-for-tech.svg)](https://microbadger.com/images/tmknom/textlint-for-tech)
 [![License](https://img.shields.io/github/license/tmknom/textlint-for-tech.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Dockerfile template.
+The pluggable natural language linter for technical writing.
+
+This is [textlint](https://github.com/textlint/textlint) wrapper.
 
 ## Requirements
 
@@ -15,9 +17,22 @@ Dockerfile template.
 
 ## Usage
 
+### Lint markdown
+
 ```sh
-curl -fsSL https://raw.githubusercontent.com/tmknom/textlint-for-tech/master/install | sh -s example
-cd example
+docker run --rm -v "$PWD:/work" tmknom/textlint-for-tech --config .textlintrc **/*.md
+```
+
+### Lint review
+
+```sh
+docker run --rm -v "$PWD:/work" tmknom/textlint-for-tech --config .textlintrc **/*.re
+```
+
+### Help
+
+```sh
+docker run --rm tmknom/textlint-for-tech --help
 ```
 
 ## Makefile targets
