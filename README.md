@@ -35,6 +35,12 @@ docker run --rm -v "$PWD:/work" tmknom/textlint-for-tech --config .textlintrc **
 docker run --rm tmknom/textlint-for-tech --help
 ```
 
+## Supported file formats
+
+- plain text
+- Markdown
+- Re:VIEW
+
 ## Makefile targets
 
 ```text
