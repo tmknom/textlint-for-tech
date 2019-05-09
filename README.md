@@ -41,6 +41,11 @@ docker run --rm tmknom/textlint-for-tech --help
 - Markdown
 - Re:VIEW
 
+## Supported plugins
+
+- [textlint-rule-preset-ja-technical-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)
+- [textlint-filter-rule-comments](https://github.com/textlint/textlint-filter-rule-comments)
+
 ## Makefile targets
 
 ```text
